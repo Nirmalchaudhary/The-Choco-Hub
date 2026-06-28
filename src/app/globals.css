@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5efe6;
+  --foreground: #3d2314;
+  --chocolate: #3d2314;
+  --chocolate-light: #5c3a24;
+  --cream: #f5efe6;
+  --gold: #d9a066;
+  --heart: #e07a3a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-chocolate: var(--chocolate);
+  --color-chocolate-light: var(--chocolate-light);
+  --color-cream: var(--cream);
+  --color-gold: var(--gold);
+  --color-heart: var(--heart);
+  --font-sans: var(--font-dm-sans);
+  --font-serif: var(--font-playfair);
+  --font-script: var(--font-great-vibes);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+}
+
+::selection {
+  background: rgba(217, 160, 102, 0.35);
+  color: var(--chocolate);
+}
+
+.chocolate-drip {
+  background: linear-gradient(
+    180deg,
+    var(--chocolate) 0%,
+    var(--chocolate) 55%,
+    transparent 55%
+  );
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 80' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M0,0 L1200,0 L1200,35 Q1150,55 1100,35 Q1050,15 1000,35 Q950,55 900,35 Q850,15 800,35 Q750,55 700,35 Q650,15 600,35 Q550,55 500,35 Q450,15 400,35 Q350,55 300,35 Q250,15 200,35 Q150,55 100,35 Q50,15 0,35 Z'/%3E%3C/svg%3E");
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
