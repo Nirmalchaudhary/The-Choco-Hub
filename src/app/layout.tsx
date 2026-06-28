@@ -22,10 +22,6 @@ export const metadata: Metadata = {
   title: "The Choco Hub",
   description:
     "Homemade with love, made for you. Premium fudgee, gooey brownies and desserts in Ahmedabad. Order from The Choco Hub.",
-  icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
-  },
 };
 
 export default function RootLayout({
